@@ -1,11 +1,21 @@
-import 'package:anamil/layout/screens/home.dart';
+// ignore_for_file: unused_local_variable
+
+import 'package:anamil/Auth/Register.dart';
+import 'package:anamil/bloc/anaml_app_bloc.dart';
+import 'package:anamil/shared/bloc_observer.dart';
+import 'package:anamil/shared/helper/cashHelper.dart';
+import 'package:anamil/theme/app_theme_light.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await CashHelper.init();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
@@ -14,13 +24,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    late bool islogin;
+    var user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      islogin = false;
+    } else {
+      islogin = true;
+    }
+
+    return BlocProvider(
+      create: (context) => AlahdanCubit(),
+      child: MaterialApp(
+        localizationsDelegates: const [
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: const [Locale("ar", "AE")],
+        locale: const Locale("ar", "AE"),
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: lightTheme,
+        home: const Register(),
       ),
-      home: const HomeScreen(),
     );
   }
 }
