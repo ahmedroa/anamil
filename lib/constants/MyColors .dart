@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyColors{
-    static const Color blue = Colors.blue;
-
+class MyColors {
+  static const Color blue = Color(0xff324AB2);
 }

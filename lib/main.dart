@@ -1,7 +1,6 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:anamil/Auth/Register.dart';
-import 'package:anamil/bloc/anaml_app_bloc.dart';
+import 'package:anamil/cubit/anaml_app_bloc.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
 import 'package:anamil/theme/app_theme_light.dart';
@@ -10,6 +9,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'cubit/anaml_app_state.dart';
+import 'layout/screens/start.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,18 +36,23 @@ class MyApp extends StatelessWidget {
 
     return BlocProvider(
       create: (context) => AlahdanCubit(),
-      child: MaterialApp(
-        localizationsDelegates: const [
-          GlobalCupertinoLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: const [Locale("ar", "AE")],
-        locale: const Locale("ar", "AE"),
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: lightTheme,
-        home: const Register(),
+      child: BlocConsumer<AlahdanCubit, AnamilStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return MaterialApp(
+            localizationsDelegates: const [
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: const [Locale("ar", "AE")],
+            locale: const Locale("ar", "AE"),
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: lightTheme,
+            home: const StartPage(),
+          );
+        },
       ),
     );
   }

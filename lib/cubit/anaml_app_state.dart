@@ -6,4 +6,8 @@ class LoadingState extends AnamilStates {}
 
 class LoginSuccessful extends AnamilStates {}
 
-class LogoutFailed extends AnamilStates {}
+class LoginFailed extends AnamilStates {
+  final String errorMsg;
+
+  LoginFailed({required this.errorMsg});
+}

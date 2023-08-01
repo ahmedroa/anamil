@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   final String text;
-  final VoidCallback onTap;
+  final Function()? onTap;
   final bool hasCircularBorder;
   final double width;
 
@@ -18,7 +18,7 @@ class MainButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width / 1.6,
         height: 50,
         child: Container(
           width: double.infinity,
