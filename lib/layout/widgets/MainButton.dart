@@ -6,14 +6,16 @@ class MainButton extends StatelessWidget {
   final Function()? onTap;
   final bool hasCircularBorder;
   final double width;
+  final Color color;
 
-  const MainButton({
-    Key? key,
-    required this.text,
-    required this.onTap,
-    this.hasCircularBorder = false,
-    this.width = double.infinity,
-  }) : super(key: key);
+  const MainButton(
+      {Key? key,
+      this.text = '',
+      required this.onTap,
+      this.hasCircularBorder = false,
+      this.width = double.infinity,
+      this.color = MyColors.blue})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class MainButton extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: MyColors.blue,
+            color: color,
           ),
           child: MaterialButton(
             onPressed: onTap,

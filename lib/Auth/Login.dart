@@ -1,6 +1,8 @@
 import 'package:anamil/constants/Route.dart';
+import 'package:anamil/constants/images.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
 import 'package:anamil/layout/screens/homePage.dart';
+import 'package:anamil/layout/widgets/buildTextField.dart';
 import 'package:anamil/layout/widgets/showProgressIndicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,89 +23,6 @@ class _LoginPageStState extends State<LoginPage> {
   bool isClicked = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  buildTextField() => Column(
-        children: [
-          TextField(
-            controller: emailController,
-            keyboardType: TextInputType.emailAddress,
-            textAlign: TextAlign.center,
-            decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.person),
-              isDense: false,
-              hintText: 'Abdulla@gmail.com',
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: MyColors.blue,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.blue,
-                  width: 2,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-            ),
-          ),
-          Align(
-              alignment: Alignment.centerRight,
-              child: Text('كلمة المرور',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[800]))),
-          TextField(
-            controller: passwordController,
-            keyboardType: TextInputType.visiblePassword,
-            textAlign: TextAlign.center,
-            obscureText: isVisible,
-            decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.lock),
-              hintText: '***********',
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: MyColors.blue,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.blue,
-                  width: 2,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
 
   @override
   Widget build(BuildContext context) {
@@ -131,26 +50,51 @@ class _LoginPageStState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
+                      padding: const EdgeInsets.only(right: 20, top: 20),
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            size: 30,
+                            color: MyColors.blue,
+                          )),
+                    ),
+                    Padding(
                       padding: const EdgeInsets.symmetric(
-                        vertical: 60.0,
+                        vertical: 50.0,
                         horizontal: 32.0,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height / 5,
+                          Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              Images.anamil,
+                              width: 300,
+                              height: 200,
+                            ),
                           ),
                           Align(
                             alignment: Alignment.center,
                             child: Text('تسجيل الدخول',
                                 style: Theme.of(context).textTheme.titleLarge?.copyWith(color: MyColors.blue)),
                           ),
-                          Align(
-                              alignment: Alignment.centerRight,
-                              child: Text('البريد الإلكتروني',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[800]))),
-                          buildTextField(),
+                          buildTextField(
+                              context: context,
+                              controller: emailController,
+                              icon: const Icon(Icons.person),
+                              fieldAddress: 'البريد الالكتروني',
+                              hintText: 'Abdulla@gmail.com'),
+                          buildTextField(
+                              context: context,
+                              controller: passwordController,
+                              icon: const Icon(Icons.lock),
+                              obscureText: true,
+                              fieldAddress: 'كلمة المرور',
+                              hintText: '***********'),
                           Align(
                             alignment: Alignment.topRight,
                             child: InkWell(
@@ -162,7 +106,7 @@ class _LoginPageStState extends State<LoginPage> {
                             ),
                           ),
                           const SizedBox(
-                            height: 60,
+                            height: 30,
                           ),
                           Align(
                               alignment: Alignment.center,
@@ -190,14 +134,26 @@ class _LoginPageStState extends State<LoginPage> {
                                     ),
                                   ))),
                           const SizedBox(
-                            height: 210,
+                            height: 10,
                           ),
-                          Align(
-                              child: Text('ليس لديك حساب؟',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold, color: MyColors.blue))),
+                          InkWell(
+                            onTap: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('ليس لديك حساب؟',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall
+                                        ?.copyWith(fontWeight: FontWeight.bold, color: MyColors.blue)),
+                                Text('انشئ الان ',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall
+                                        ?.copyWith(fontWeight: FontWeight.bold, color: MyColors.blue)),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
