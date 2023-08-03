@@ -19,8 +19,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageStState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
-  bool isVisible = true;
-  bool isClicked = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -83,18 +81,32 @@ class _LoginPageStState extends State<LoginPage> {
                                 style: Theme.of(context).textTheme.titleLarge?.copyWith(color: MyColors.blue)),
                           ),
                           buildTextField(
-                              context: context,
-                              controller: emailController,
-                              icon: const Icon(Icons.person),
-                              fieldAddress: 'البريد الالكتروني',
-                              hintText: 'Abdulla@gmail.com'),
+                            // context: context,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Please enter yout phone number!';
+                              }
+                              return null;
+                            },
+                            controller: emailController,
+                            icon: const Icon(Icons.person),
+                            fieldAddress: 'البريد الالكتروني',
+                            hintText: 'Abdulla@gmail.com',
+                          ),
                           buildTextField(
-                              context: context,
-                              controller: passwordController,
-                              icon: const Icon(Icons.lock),
-                              obscureText: true,
-                              fieldAddress: 'كلمة المرور',
-                              hintText: '***********'),
+                            // context: context,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Please enter yout phone number!';
+                              }
+                              return null;
+                            },
+                            controller: passwordController,
+                            icon: const Icon(Icons.lock),
+                            obscureText: true,
+                            fieldAddress: 'كلمة المرور',
+                            hintText: '***********',
+                          ),
                           Align(
                             alignment: Alignment.topRight,
                             child: InkWell(

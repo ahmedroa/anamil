@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import '../../constants/MyColors .dart';
 
 buildTextField(
-        {required context,
-        required String fieldAddress,
+        {required String fieldAddress,
         required String hintText,
         String? Function(String?)? validator,
         required TextEditingController? controller,
@@ -16,8 +15,10 @@ buildTextField(
       children: [
         Align(
             alignment: Alignment.centerRight,
-            child:
-                Text(fieldAddress, style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[800]))),
+            child: Text(
+              fieldAddress,
+            )),
+        //  style:  Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[800]))),
         TextFormField(
           validator: validator,
           controller: controller,

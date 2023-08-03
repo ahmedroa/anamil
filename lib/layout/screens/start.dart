@@ -3,7 +3,6 @@ import 'package:anamil/Auth/Register.dart';
 import 'package:anamil/constants/MyColors%20.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
-import 'package:anamil/layout/screens/homePage.dart';
 import 'package:anamil/layout/widgets/MainButton.dart';
 import 'package:flutter/material.dart';
 
@@ -21,8 +20,6 @@ class StartPage extends StatelessWidget {
             children: [
               Image.asset(
                 Images.anamil,
-                width: 300,
-                height: 300,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 5,
@@ -66,7 +63,8 @@ class StartPage extends StatelessWidget {
               ),
               TextButton(
                   onPressed: () {
-                    navigateTo(context, const HomePage());
+                    // navigateTo(context, const HomePage());
+                    // FirebaseAuth.instance.createUserWithEmailAndPassword(email: 'aaaa@gmail.com', password: 'password');
                   },
                   child: const Text("تخطي")),
               const SizedBox(

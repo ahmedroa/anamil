@@ -104,7 +104,8 @@ class _RegisterState extends State<Register> {
             showProgressIndicator(context);
           }
           if (state is LoginSuccessful) {
-            navigateTo(context, const HomePage());
+            Navigator.of(context).pop();
+            navigateAndFinish(context, const HomePage());
           }
           if (state is LoginFailed) {}
         },
@@ -143,8 +144,6 @@ class _RegisterState extends State<Register> {
                             alignment: Alignment.center,
                             child: Image.asset(
                               Images.anamil,
-                              width: 300,
-                              height: 200,
                             ),
                           ),
                           Align(
@@ -153,21 +152,37 @@ class _RegisterState extends State<Register> {
                                 style: Theme.of(context).textTheme.titleLarge?.copyWith(color: MyColors.blue)),
                           ),
                           buildTextField(
-                              context: context,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter yout phone number!';
+                                }
+                                return null;
+                              },
                               controller: nameController,
                               icon: const Icon(Icons.person),
                               fieldAddress: 'الاسم',
-                              hintText: 'Abdulla'),
+                              hintText: 'عبدالله'),
                           buildTextField(
-                              context: context,
+                              // context: context,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter yout phone number!';
+                                }
+                                return null;
+                              },
                               controller: emailController,
                               icon: const Icon(Icons.email),
-                              obscureText: true,
                               fieldAddress: 'البريد الالكتروني',
                               hintText: 'Abdulla@gmail.com'),
                           buildTextField(
-                              context: context,
-                              controller: phoneController,
+                              // context: context,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter yout phone number!';
+                                }
+                                return null;
+                              },
+                              controller: passwordController,
                               icon: const Icon(Icons.lock),
                               obscureText: true,
                               fieldAddress: 'كلمة المرور',
@@ -194,8 +209,12 @@ class _RegisterState extends State<Register> {
                                     child: MaterialButton(
                                       onPressed: () {
                                         if (formKey.currentState!.validate()) {
-                                          AlahdanCubit.get(context)
-                                              .signin(email: emailController.text, password: passwordController.text);
+                                          AlahdanCubit.get(context).signUp(
+                                            name: nameController.text,
+                                            phone: phoneController.text,
+                                            email: emailController.text,
+                                            password: passwordController.text,
+                                          );
                                         }
                                       },
                                       child: const Text(
