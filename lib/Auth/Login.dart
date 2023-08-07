@@ -1,3 +1,4 @@
+import 'package:anamil/Auth/ForgotYourPassword.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
@@ -110,7 +111,9 @@ class _LoginPageStState extends State<LoginPage> {
                           Align(
                             alignment: Alignment.topRight,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                navigateTo(context, const ForgotYourPassword());
+                              },
                               child: Text(
                                 'هل نسيت كلمة المرور ؟',
                                 style: Theme.of(context).textTheme.titleSmall?.copyWith(color: MyColors.blue),

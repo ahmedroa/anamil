@@ -1,4 +1,6 @@
+import 'package:anamil/constants/Route.dart';
 import 'package:anamil/cubit/anaml_app_state.dart';
+import 'package:anamil/layout/screens/homePage.dart';
 import 'package:anamil/layout/widgets/message.dart';
 import 'package:anamil/models/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -33,7 +35,7 @@ class AlahdanCubit extends Cubit<AnamilStates> {
         UserModel model =
             UserModel(uId: userData.user!.uid, email: email, password: password, name: name, phone: phone);
         FirebaseFirestore.instance.collection('user').doc(userData.user!.uid).set(model.toJson());
-        // navigateTo(context, const HomePage());
+        navigateTo(context, const HomePage());
         emit(LoginSuccessful());
       });
     } on FirebaseAuthException catch (exception) {

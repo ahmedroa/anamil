@@ -137,9 +137,6 @@ class _RegisterState extends State<Register> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // SizedBox(
-                          //   height: MediaQuery.of(context).size.height / 5,
-                          // ),
                           Align(
                             alignment: Alignment.center,
                             child: Image.asset(

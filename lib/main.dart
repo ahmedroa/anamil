@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:anamil/cubit/anaml_app_bloc.dart';
+import 'package:anamil/layout/screens/start.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
 import 'package:anamil/theme/app_theme_light.dart';
@@ -11,7 +12,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'cubit/anaml_app_state.dart';
-import 'layout/screens/start.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
