@@ -53,7 +53,8 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 product,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -64,7 +65,10 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 desc,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(color: Color(0xFF929292), fontSize: 8, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                    color: Color(0xFF929292),
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -72,7 +76,8 @@ class ProductBox extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: Text(
                               '$price ريال',
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w300),
                             ),
                           ),
                         ],

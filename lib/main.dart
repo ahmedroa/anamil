@@ -1,7 +1,8 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:anamil/constants/MyColors%20.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
-import 'package:anamil/layout/screens/details.dart';
+import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
 import 'package:anamil/theme/app_theme_light.dart';
@@ -48,9 +49,14 @@ class MyApp extends StatelessWidget {
             supportedLocales: const [Locale("ar", "AE")],
             locale: const Locale("ar", "AE"),
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
+            title: 'anamil',
             theme: lightTheme,
-            home: const Details(),
+            home: Container(
+              color: MyColors.blue,
+              child: const SafeArea(
+                child: TapsScreens(),
+              ),
+            ),
           );
         },
       ),
