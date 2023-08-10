@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_key_in_widget_constructors
 
+import 'package:anamil/constants/MyColors%20.dart';
 import 'package:flutter/material.dart';
 
 class ProductBox extends StatelessWidget {
@@ -7,17 +8,18 @@ class ProductBox extends StatelessWidget {
   final String desc;
   final String image;
   final double price;
-  const ProductBox(
-      {required this.product,
-      required this.desc,
-      required this.image,
-      required this.price});
+  const ProductBox({
+    required this.product,
+    required this.desc,
+    required this.image,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 170,
-      height: 207,
+      width: MediaQuery.of(context).size.width / 2.2,
+      height: MediaQuery.of(context).size.height / 3,
       child: Card(
         elevation: 4,
         shadowColor: Colors.white,
@@ -51,8 +53,7 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 product,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -63,10 +64,7 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 desc,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    color: Color(0xFF929292),
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w300),
+                                style: TextStyle(color: Color(0xFF929292), fontSize: 8, fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -74,8 +72,7 @@ class ProductBox extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: Text(
                               '$price ريال',
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w300),
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
                             ),
                           ),
                         ],
@@ -100,7 +97,7 @@ class ProductBox extends StatelessWidget {
                   child: Icon(
                     Icons.favorite_border,
                     size: 20,
-                    color: Color(0xff324AB2),
+                    color: MyColors.blue,
                   ),
                 ),
               ),
