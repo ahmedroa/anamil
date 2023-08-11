@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable, unused_import
+
 import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/layout/widgets/Divider.dart';

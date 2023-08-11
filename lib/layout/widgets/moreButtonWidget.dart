@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:anamil/constants/Route.dart';
-import 'package:anamil/layout/screens/newProductsScreen.dart';
 import 'package:flutter/material.dart';
 
 class MoreButtonWidget extends StatelessWidget {
@@ -44,7 +43,8 @@ class MoreButtonWidget extends StatelessWidget {
               Icon(
                 Icons.arrow_forward,
                 color: Color(0xff1F348D),
-                size: 12,
+                size: 15,
+                weight: 600,
               ),
             ],
           ),

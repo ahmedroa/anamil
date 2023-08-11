@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
           children: [
             SizedBox(height: 8),
             AppbarSearchWidget(),
+            SizedBox(height: 8),
             CarouselWithIndicator(),
             SizedBox(height: 16),
             SingleChildScrollView(
@@ -38,9 +39,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 2),
+            SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
               child: Column(
                 children: [
                   Row(
@@ -57,7 +59,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -78,9 +80,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 2),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
               child: Column(
                 children: [
                   Row(
@@ -97,7 +99,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

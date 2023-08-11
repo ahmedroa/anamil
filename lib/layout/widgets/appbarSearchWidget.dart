@@ -56,21 +56,21 @@ class AppbarSearchWidget extends StatelessWidget {
               ),
             ),
           ),
-          IconButton(
-            highlightColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            onPressed: () {
-              print('icon button for filter');
-            },
-            icon: Container(
-              width: 42,
-              height: 42,
-              decoration: BoxDecoration(
-                color: MyColors.blue,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Icon(
-                  size: 18, Icons.filter_list_rounded, color: Colors.white),
+          Container(
+            width: 38,
+            height: 38,
+            decoration: BoxDecoration(
+              color: MyColors.blue,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: IconButton(
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              onPressed: () {
+                print('icon button for filter');
+              },
+              icon: Icon(
+                  size: 20, Icons.filter_list_rounded, color: Colors.white),
             ),
           ),
         ],

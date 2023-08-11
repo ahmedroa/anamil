@@ -20,14 +20,14 @@ class CategoryWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CircleAvatar(
-              radius: 75 / 2,
+              radius: 65 / 2,
               backgroundImage: AssetImage(Images.imageDemo1),
               backgroundColor: Colors.transparent,
             ),
             SizedBox(height: 5),
             Text(
               'لوحات',
-              style: TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: 12),
             ),
           ],
         ),

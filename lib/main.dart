@@ -2,7 +2,6 @@
 
 import 'package:anamil/cubit/anaml_app_bloc.dart';
 import 'package:anamil/layout/screens/start.dart';
-import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
@@ -12,7 +11,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'cubit/anaml_app_state.dart';
 
 void main() async {

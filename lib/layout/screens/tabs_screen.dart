@@ -7,7 +7,7 @@ import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:flutter/material.dart';
 
 int _selectedIndex = 0;
-late Widget bodyApp = HomePage();
+Widget bodyApp = HomePage();
 
 class TabsScreens extends StatefulWidget {
   const TabsScreens({super.key});

@@ -3,7 +3,6 @@
 import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/layout/screens/details.dart';
-import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductBox extends StatelessWidget {
@@ -23,11 +22,19 @@ class ProductBox extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 2.2,
       height: MediaQuery.of(context).size.height / 3.7,
-      child: Card(
-        elevation: 4,
-        shadowColor: Colors.white,
-        shape: RoundedRectangleBorder(
+      child: Container(
+        margin: EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: Offset(0, 2),
+            ),
+          ],
         ),
         child: Stack(
           children: [
@@ -35,7 +42,6 @@ class ProductBox extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               onTap: () {
                 navigateTo(context, Details());
-                // bodyApp = Details();
               },
               child: Column(
                 children: [
@@ -108,8 +114,8 @@ class ProductBox extends StatelessWidget {
                   elevation: 0,
                   onPressed: () {},
                   child: Icon(
-                    Icons.favorite_border,
-                    size: 20,
+                    Icons.favorite_border_rounded,
+                    size: 23,
                     color: MyColors.blue,
                   ),
                 ),

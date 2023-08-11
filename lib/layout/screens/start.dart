@@ -3,7 +3,6 @@ import 'package:anamil/Auth/Register.dart';
 import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
-import 'package:anamil/layout/screens/homePage.dart';
 import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:anamil/layout/widgets/MainButton.dart';
 import 'package:flutter/material.dart';
