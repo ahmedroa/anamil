@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_key_in_widget_constructors
 
-import 'package:anamil/constants/MyColors%20.dart';
+import 'package:anamil/constants/MyColors.dart';
+import 'package:anamil/constants/Route.dart';
+import 'package:anamil/layout/screens/details.dart';
 import 'package:flutter/material.dart';
 
 class ProductBox extends StatelessWidget {
@@ -19,24 +21,36 @@ class ProductBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 2.2,
-      height: MediaQuery.of(context).size.height / 3,
-      child: Card(
-        elevation: 4,
-        shadowColor: Colors.white,
-        shape: RoundedRectangleBorder(
+      height: MediaQuery.of(context).size.height / 3.7,
+      child: Container(
+        margin: EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: Offset(0, 2),
+            ),
+          ],
         ),
         child: Stack(
           children: [
             InkWell(
               borderRadius: BorderRadius.circular(8),
-              onTap: () {},
+              onTap: () {
+                navigateTo(context, Details());
+              },
               child: Column(
                 children: [
                   ClipRRect(
                     child: Image.asset(
                       image,
                       fit: BoxFit.fill,
+                      width: MediaQuery.of(context).size.width / 2.2,
+                      height: MediaQuery.of(context).size.height / 6,
                     ),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -53,7 +67,8 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 product,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -64,7 +79,10 @@ class ProductBox extends StatelessWidget {
                               child: Text(
                                 desc,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(color: Color(0xFF929292), fontSize: 8, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                    color: Color(0xFF929292),
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.w300),
                               ),
                             ),
                           ),
@@ -72,7 +90,8 @@ class ProductBox extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: Text(
                               '$price ريال',
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w300),
                             ),
                           ),
                         ],
@@ -95,8 +114,8 @@ class ProductBox extends StatelessWidget {
                   elevation: 0,
                   onPressed: () {},
                   child: Icon(
-                    Icons.favorite_border,
-                    size: 20,
+                    Icons.favorite_border_rounded,
+                    size: 23,
                     color: MyColors.blue,
                   ),
                 ),

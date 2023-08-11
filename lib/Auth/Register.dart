@@ -1,4 +1,4 @@
-import 'package:anamil/constants/MyColors%20.dart';
+import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';

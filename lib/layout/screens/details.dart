@@ -1,7 +1,10 @@
-import 'package:anamil/constants/MyColors%20.dart';
+// ignore_for_file: unused_local_variable, unused_import
+
+import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/layout/widgets/Divider.dart';
 import 'package:anamil/layout/widgets/productBox.dart';
+import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
@@ -145,6 +148,7 @@ buildCommit() => Container(
               ],
             ),
             TextButton(onPressed: () {}, child: const Text('المزيد')),
+            const Align(alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
           ],
         ),
       ),

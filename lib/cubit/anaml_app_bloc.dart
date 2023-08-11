@@ -22,7 +22,7 @@ class AlahdanCubit extends Cubit<AnamilStates> {
       if (exception.code == 'user-not-found') {
         message(message: 'لم يتم العثور على مستخدم لهذا البريد الإلكتروني', color: Colors.red);
       } else if (exception.code == 'wrong-password') {
-        message(message: 'البريد الاكتروني وكلمة المرور غير متطابقان', color: Colors.red);
+        message(message: 'البريد الإلكتروني وكلمة المرور غير متطابقان', color: Colors.red);
       }
     }
   }

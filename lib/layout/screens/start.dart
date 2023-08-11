@@ -1,9 +1,9 @@
 import 'package:anamil/Auth/Login.dart';
 import 'package:anamil/Auth/Register.dart';
-import 'package:anamil/constants/MyColors%20.dart';
+import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
-import 'package:anamil/layout/screens/homePage.dart';
+import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:anamil/layout/widgets/MainButton.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,10 @@ class StartPage extends StatelessWidget {
                         children: [
                           Text(
                             'تسجيل الدخول',
-                            style: TextStyle(color: MyColors.blue, fontSize: 24, fontWeight: FontWeight.w600),
+                            style: TextStyle(
+                                color: MyColors.blue,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w600),
                           ),
                           Icon(
                             Icons.person,
@@ -63,10 +66,14 @@ class StartPage extends StatelessWidget {
                 },
               ),
               TextButton(
-                  onPressed: () {
-                    navigateTo(context, const HomePage());
-                  },
-                  child: const Text("تخطي")),
+                onPressed: () {
+                  navigateTo(context, const TabsScreens());
+                },
+                child: const Text(
+                  "تخطي",
+                  style: TextStyle(color: MyColors.blue),
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
