@@ -3,4 +3,5 @@ class Images {
   static String details = 'images/details.png';
   static String person = 'images/person.png';
   static String chat = 'images/chat.png';
+  static String prodact = 'images/prodact.png';
 }

@@ -1,7 +1,7 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:anamil/Auth/ForgotYourPassword.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
-import 'package:anamil/layout/screens/details.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
 import 'package:anamil/theme/app_theme_light.dart';
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: lightTheme,
-            home: const Details(),
+            home: const ForgotYourPassword(),
           );
         },
       ),
