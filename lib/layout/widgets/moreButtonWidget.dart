@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:anamil/constants/Route.dart';
+import 'package:anamil/layout/screens/newProductsScreen.dart';
 import 'package:flutter/material.dart';
 
 class MoreButtonWidget extends StatelessWidget {
-  const MoreButtonWidget({
-    super.key,
-  });
+  final dynamic route;
+  const MoreButtonWidget({super.key, required this.route});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class MoreButtonWidget extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          print('more');
+          navigateTo(context, route);
         },
         borderRadius: BorderRadius.circular(8),
         child: Padding(

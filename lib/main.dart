@@ -1,8 +1,9 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:anamil/constants/MyColors%20.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
+import 'package:anamil/layout/screens/start.dart';
 import 'package:anamil/layout/screens/tabs_screen.dart';
+import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:anamil/shared/bloc_observer.dart';
 import 'package:anamil/shared/helper/cashHelper.dart';
 import 'package:anamil/theme/app_theme_light.dart';
@@ -51,12 +52,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'anamil',
             theme: lightTheme,
-            home: Container(
-              color: MyColors.blue,
-              child: const SafeArea(
-                child: TapsScreens(),
-              ),
-            ),
+            home: const SafeAreaWidth(child: StartPage()),
           );
         },
       ),

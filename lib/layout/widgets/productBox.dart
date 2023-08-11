@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_key_in_widget_constructors
 
-import 'package:anamil/constants/MyColors%20.dart';
+import 'package:anamil/constants/MyColors.dart';
+import 'package:anamil/constants/Route.dart';
+import 'package:anamil/layout/screens/details.dart';
+import 'package:anamil/layout/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductBox extends StatelessWidget {
@@ -19,7 +22,7 @@ class ProductBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 2.2,
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 3.7,
       child: Card(
         elevation: 4,
         shadowColor: Colors.white,
@@ -30,13 +33,18 @@ class ProductBox extends StatelessWidget {
           children: [
             InkWell(
               borderRadius: BorderRadius.circular(8),
-              onTap: () {},
+              onTap: () {
+                navigateTo(context, Details());
+                // bodyApp = Details();
+              },
               child: Column(
                 children: [
                   ClipRRect(
                     child: Image.asset(
                       image,
                       fit: BoxFit.fill,
+                      width: MediaQuery.of(context).size.width / 2.2,
+                      height: MediaQuery.of(context).size.height / 6,
                     ),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -67,7 +75,7 @@ class ProductBox extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Color(0xFF929292),
-                                    fontSize: 8,
+                                    fontSize: 9,
                                     fontWeight: FontWeight.w300),
                               ),
                             ),

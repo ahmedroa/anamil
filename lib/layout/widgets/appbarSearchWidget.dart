@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:anamil/constants/MyColors.dart';
 import 'package:flutter/material.dart';
 
 class AppbarSearchWidget extends StatelessWidget {
@@ -8,7 +9,7 @@ class AppbarSearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -65,7 +66,7 @@ class AppbarSearchWidget extends StatelessWidget {
               width: 42,
               height: 42,
               decoration: BoxDecoration(
-                color: Color(0xff1F348D),
+                color: MyColors.blue,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(

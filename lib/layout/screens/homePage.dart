@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
+import 'package:anamil/layout/screens/forYouScreen.dart';
+import 'package:anamil/layout/screens/newProductsScreen.dart';
 import 'package:anamil/layout/widgets/carouselWithIndicator.dart';
 import 'package:flutter/material.dart';
 import '../../layout/widgets/appbarSearchWidget.dart';
@@ -18,6 +20,7 @@ class HomePage extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
+            SizedBox(height: 8),
             AppbarSearchWidget(),
             CarouselWithIndicator(),
             SizedBox(height: 16),
@@ -46,10 +49,12 @@ class HomePage extends StatelessWidget {
                       Text(
                         'الأعمال الحديثة',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 20,
                         ),
                       ),
-                      MoreButtonWidget(),
+                      MoreButtonWidget(
+                        route: NewProductsScreen(),
+                      ),
                     ],
                   ),
                   SizedBox(height: 12),
@@ -57,16 +62,16 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductBox(
-                        product: 'product',
-                        desc: 'desc',
+                        product: 'لوحة تشكيلية',
+                        desc: 'باستخدام الألوان الزيتية مع لوح...',
                         image: Images.imageDemo1,
-                        price: 12,
+                        price: 218,
                       ),
                       ProductBox(
-                        product: 'product',
-                        desc: 'desc',
+                        product: 'لوحة تشكيلية',
+                        desc: 'باستخدام الألوان الزيتية مع لوح...',
                         image: Images.imageDemo1,
-                        price: 12,
+                        price: 218,
                       ),
                     ],
                   ),
@@ -84,10 +89,12 @@ class HomePage extends StatelessWidget {
                       Text(
                         'قد يعجبك',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 20,
                         ),
                       ),
-                      MoreButtonWidget(),
+                      MoreButtonWidget(
+                        route: ForYouScreen(),
+                      ),
                     ],
                   ),
                   SizedBox(height: 12),
@@ -95,16 +102,16 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductBox(
-                        product: 'product',
-                        desc: 'desc',
+                        product: 'لوحة تشكيلية',
+                        desc: 'باستخدام الألوان الزيتية مع لوح...',
                         image: Images.imageDemo1,
-                        price: 12,
+                        price: 218,
                       ),
                       ProductBox(
-                        product: 'product',
-                        desc: 'desc',
+                        product: 'لوحة تشكيلية',
+                        desc: 'باستخدام الألوان الزيتية مع لوح...',
                         image: Images.imageDemo1,
-                        price: 12,
+                        price: 218,
                       ),
                     ],
                   ),

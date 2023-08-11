@@ -1,7 +1,8 @@
-import 'package:anamil/constants/MyColors%20.dart';
+import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/layout/widgets/Divider.dart';
 import 'package:anamil/layout/widgets/productBox.dart';
+import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -12,33 +13,39 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     double value = 3.5;
 
-    return Scaffold(
-      body: SafeArea(
-          child: ListView(
-        children: [
-          Column(children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  buildProduct(context),
-                  buildProductDetails(context),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildArtistDetails(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildCommit(),
-                  ProductBox(product: 'product', desc: 'desc', image: Images.anamil, price: 5)
-                ],
-              ),
-            )
-          ]),
-        ],
-      )),
+    return SafeAreaWidth(
+      child: Scaffold(
+        body: ListView(
+          children: [
+            Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    buildProduct(context),
+                    buildProductDetails(context),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildArtistDetails(),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildCommit(),
+                    ProductBox(
+                      product: 'لوحة تشكيلية',
+                      desc: 'باستخدام الألوان الزيتية مع لوح...',
+                      image: Images.imageDemo1,
+                      price: 218,
+                    ),
+                  ],
+                ),
+              )
+            ]),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -51,7 +58,8 @@ buildProduct(context) => Column(
           width: double.infinity,
         ),
         Text('لوحة تشيكلية', style: Theme.of(context).textTheme.titleLarge),
-        Text('رسم تشيكلي مصنوع رقميا , نسخة مطبوعة', style: Theme.of(context).textTheme.titleSmall)
+        Text('رسم تشيكلي مصنوع رقميا , نسخة مطبوعة',
+            style: Theme.of(context).textTheme.titleSmall)
       ],
     );
 
@@ -90,7 +98,11 @@ buildProductDetails(context) => Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('تفاصيل المنتج', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: MyColors.blue)),
+            Text('تفاصيل المنتج',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: MyColors.blue)),
             Row(
               children: [
                 Text('الطول', style: Theme.of(context).textTheme.titleSmall),
@@ -140,7 +152,8 @@ buildCommit() => Container(
               ],
             ),
             TextButton(onPressed: () {}, child: const Text('المزيد')),
-            const Align(alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
+            const Align(
+                alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
           ],
         ),
       ),

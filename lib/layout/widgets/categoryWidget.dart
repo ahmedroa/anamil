@@ -27,7 +27,7 @@ class CategoryWidget extends StatelessWidget {
             SizedBox(height: 5),
             Text(
               'لوحات',
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(fontSize: 14),
             ),
           ],
         ),
