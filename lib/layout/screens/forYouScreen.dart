@@ -68,7 +68,7 @@ class ForYouScreen extends StatelessWidget {
           appBar: AppBar(
             title: Text(
               'قد يعجبك',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             leading: IconButton(
               onPressed: () {

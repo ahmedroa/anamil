@@ -65,28 +65,29 @@ class NewProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeAreaWidth(
       child: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'الأعمال الحديثة',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
-            ),
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.arrow_back_ios),
-            ),
-            backgroundColor: MyColors.blue,
-            elevation: 0,
+        appBar: AppBar(
+          title: Text(
+            'الأعمال الحديثة',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
-          body: Column(
-            children: [
-              AppbarSearchWidget(),
-              Expanded(
-                child: productsGridView(context),
-              ),
-            ],
-          )),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios),
+          ),
+          backgroundColor: MyColors.blue,
+          elevation: 0,
+        ),
+        body: Column(
+          children: [
+            AppbarSearchWidget(),
+            Expanded(
+              child: productsGridView(context),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
