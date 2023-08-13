@@ -5,10 +5,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
-  Images.imageDemo1,
-  Images.imageDemo1,
-  Images.imageDemo1,
-  Images.imageDemo1,
+  Images.imgDemo11,
+  Images.imgDemo12,
+  Images.imgDemo3,
+  Images.imgDemo6,
 ];
 
 class CarouselWithIndicator extends StatefulWidget {

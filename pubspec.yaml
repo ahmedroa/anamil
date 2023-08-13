@@ -28,7 +28,6 @@ dependencies:
   carousel_slider: ^4.2.1
   dropdown_search: ^5.0.6
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -40,7 +39,7 @@ flutter:
 
   assets:
     - assets/images/
-  #   - images/a_dot_ham.jpeg
+    - assets/images/demo/
 
   fonts:
     - family: GE_SS

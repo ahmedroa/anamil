@@ -1,4 +1,5 @@
 import 'package:anamil/Auth/ForgotYourPassword.dart';
+import 'package:anamil/Auth/Register.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/constants/images.dart';
 import 'package:anamil/cubit/anaml_app_bloc.dart';
@@ -79,13 +80,16 @@ class _LoginPageStState extends State<LoginPage> {
                           Align(
                             alignment: Alignment.center,
                             child: Text('تسجيل الدخول',
-                                style: Theme.of(context).textTheme.titleLarge?.copyWith(color: MyColors.blue)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(color: MyColors.blue)),
                           ),
                           buildTextField(
                             // context: context,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Please enter yout phone number!';
+                                return 'ادخل البريد الالكتروني!';
                               }
                               return null;
                             },
@@ -98,7 +102,7 @@ class _LoginPageStState extends State<LoginPage> {
                             // context: context,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Please enter yout phone number!';
+                                return 'ادخل كلمة المرور!';
                               }
                               return null;
                             },
@@ -116,7 +120,10 @@ class _LoginPageStState extends State<LoginPage> {
                               },
                               child: Text(
                                 'هل نسيت كلمة المرور ؟',
-                                style: Theme.of(context).textTheme.titleSmall?.copyWith(color: MyColors.blue),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleSmall
+                                    ?.copyWith(color: MyColors.blue),
                               ),
                             ),
                           ),
@@ -126,7 +133,8 @@ class _LoginPageStState extends State<LoginPage> {
                           Align(
                               alignment: Alignment.center,
                               child: SizedBox(
-                                  width: MediaQuery.of(context).size.width / 1.9,
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.9,
                                   height: 50,
                                   child: Container(
                                     width: double.infinity,
@@ -137,14 +145,18 @@ class _LoginPageStState extends State<LoginPage> {
                                     child: MaterialButton(
                                       onPressed: () {
                                         if (formKey.currentState!.validate()) {
-                                          AlahdanCubit.get(context)
-                                              .signin(email: emailController.text, password: passwordController.text);
+                                          AlahdanCubit.get(context).signin(
+                                              email: emailController.text,
+                                              password:
+                                                  passwordController.text);
                                         }
                                       },
                                       child: const Text(
                                         'تسجيل الدخول',
-                                        style:
-                                            TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ),
                                   ))),
@@ -152,7 +164,9 @@ class _LoginPageStState extends State<LoginPage> {
                             height: 10,
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              navigateTo(context, Register());
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -160,12 +174,16 @@ class _LoginPageStState extends State<LoginPage> {
                                     style: Theme.of(context)
                                         .textTheme
                                         .titleSmall
-                                        ?.copyWith(fontWeight: FontWeight.bold, color: MyColors.blue)),
+                                        ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            color: MyColors.blue)),
                                 Text('انشئ الان ',
                                     style: Theme.of(context)
                                         .textTheme
                                         .titleSmall
-                                        ?.copyWith(fontWeight: FontWeight.bold, color: MyColors.blue)),
+                                        ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            color: MyColors.blue)),
                               ],
                             ),
                           ),

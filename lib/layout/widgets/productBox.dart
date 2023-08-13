@@ -3,20 +3,18 @@
 import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/constants/Route.dart';
 import 'package:anamil/layout/screens/details.dart';
+import 'package:anamil/models/product.dart';
 import 'package:flutter/material.dart';
 
-class ProductBox extends StatelessWidget {
-  final String product;
-  final String desc;
-  final String image;
-  final double price;
-  const ProductBox({
-    required this.product,
-    required this.desc,
-    required this.image,
-    required this.price,
-  });
+class ProductBox extends StatefulWidget {
+  final Product product;
+  ProductBox({required this.product});
 
+  @override
+  State<ProductBox> createState() => _ProductBoxState();
+}
+
+class _ProductBoxState extends State<ProductBox> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -47,7 +45,7 @@ class ProductBox extends StatelessWidget {
                 children: [
                   ClipRRect(
                     child: Image.asset(
-                      image,
+                      widget.product.images[0],
                       fit: BoxFit.fill,
                       width: MediaQuery.of(context).size.width / 2.2,
                       height: MediaQuery.of(context).size.height / 6,
@@ -65,7 +63,7 @@ class ProductBox extends StatelessWidget {
                             child: SizedBox(
                               width: 100,
                               child: Text(
-                                product,
+                                widget.product.name,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w300),
@@ -77,7 +75,7 @@ class ProductBox extends StatelessWidget {
                             child: SizedBox(
                               width: 120,
                               child: Text(
-                                desc,
+                                widget.product.desc,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Color(0xFF929292),
@@ -89,7 +87,7 @@ class ProductBox extends StatelessWidget {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              '$price ريال',
+                              '${widget.product.price} ريال',
                               style: TextStyle(
                                   fontSize: 12, fontWeight: FontWeight.w300),
                             ),
@@ -112,9 +110,16 @@ class ProductBox extends StatelessWidget {
                   hoverElevation: 0,
                   highlightElevation: 0,
                   elevation: 0,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      widget.product.changeIsFavorite();
+                    });
+                    print(widget.product.isFavorite);
+                  },
                   child: Icon(
-                    Icons.favorite_border_rounded,
+                    widget.product.isFavorite
+                        ? Icons.favorite_rounded
+                        : Icons.favorite_border_rounded,
                     size: 23,
                     color: MyColors.blue,
                   ),

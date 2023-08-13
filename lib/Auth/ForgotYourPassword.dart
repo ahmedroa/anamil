@@ -14,12 +14,13 @@ class ForgotYourPassword extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('نسيت كلمة المرور', style: Theme.of(context).textTheme.titleLarge!),
+          Text('نسيت كلمة المرور',
+              style: Theme.of(context).textTheme.titleLarge!),
           buildTextField(
             // context: context,
             validator: (value) {
               if (value!.isEmpty) {
-                return 'Please enter yout phone number!';
+                return 'ادخل البريد الالكتروني!';
               }
               return null;
             },

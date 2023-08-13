@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:anamil/constants/MyColors.dart';
 import 'package:anamil/dataDemo.dart';
@@ -6,9 +6,9 @@ import 'package:anamil/layout/widgets/appbarSearchWidget.dart';
 import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:flutter/material.dart';
 
-
-class ForYouScreen extends StatelessWidget {
-  const ForYouScreen({super.key});
+class CategoriesScreen extends StatelessWidget {
+  final String category;
+  const CategoriesScreen({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class ForYouScreen extends StatelessWidget {
       child: Scaffold(
           appBar: AppBar(
             title: Text(
-              'قد يعجبك',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+              category,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             leading: IconButton(
               onPressed: () {

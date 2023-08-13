@@ -5,6 +5,7 @@ import 'package:anamil/constants/images.dart';
 import 'package:anamil/layout/widgets/Divider.dart';
 import 'package:anamil/layout/widgets/productBox.dart';
 import 'package:anamil/layout/widgets/safeAreaWidget.dart';
+import 'package:anamil/models/product.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
@@ -32,8 +33,13 @@ class Details extends StatelessWidget {
                     height: 10,
                   ),
                   buildCommit(),
-                  const Align(alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
-                  ProductBox(product: 'product', desc: 'desc', image: Images.anamil, price: 5)
+                  const Align(
+                      alignment: Alignment.bottomRight,
+                      child: Text('قد يعجبك ')),
+                  ProductBox(
+                    product: Product(
+                        images: [Images.imgDemo12], details: [], category: ''),
+                  ),
                 ],
               ),
             )
@@ -57,7 +63,8 @@ buildProduct(context) => Column(
           // height: double.infinity,
         ),
         Text('لوحة تشيكلية', style: Theme.of(context).textTheme.titleLarge),
-        Text('رسم تشيكلي مصنوع رقميا , نسخة مطبوعة', style: Theme.of(context).textTheme.titleSmall)
+        Text('رسم تشيكلي مصنوع رقميا , نسخة مطبوعة',
+            style: Theme.of(context).textTheme.titleSmall)
       ],
     );
 
@@ -98,7 +105,11 @@ buildProductDetails(context) => Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('تفاصيل المنتج', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: MyColors.blue)),
+            Text('تفاصيل المنتج',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: MyColors.blue)),
             Row(
               children: [
                 Text('الطول', style: Theme.of(context).textTheme.titleSmall),
@@ -148,7 +159,8 @@ buildCommit() => Container(
               ],
             ),
             TextButton(onPressed: () {}, child: const Text('المزيد')),
-            const Align(alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
+            const Align(
+                alignment: Alignment.bottomRight, child: Text('قد يعجبك ')),
           ],
         ),
       ),

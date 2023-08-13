@@ -30,7 +30,8 @@ class _RegisterState extends State<Register> {
 
     String flag = countryCode.toUpperCase().replaceAllMapped(
           RegExp(r'[A-Z]'),
-          (match) => String.fromCharCode(match.group(0)!.codeUnitAt(0) + 127397),
+          (match) =>
+              String.fromCharCode(match.group(0)!.codeUnitAt(0) + 127397),
         );
 
     return flag;
@@ -52,9 +53,9 @@ class _RegisterState extends State<Register> {
               keyboardType: TextInputType.phone,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Please enter yout phone number!';
+                  return 'ادخل رقم الهاتف!';
                 } else if (value.length < 10) {
-                  return 'Too short for a phone number!';
+                  return 'رقم الهاتف غير صحيح!';
                 }
                 return null;
               },
@@ -65,7 +66,6 @@ class _RegisterState extends State<Register> {
               ),
               decoration: const InputDecoration(border: InputBorder.none),
               cursorColor: Colors.black,
-
               onSaved: (value) {
                 // phoneNumber = value!;
               },
@@ -146,12 +146,15 @@ class _RegisterState extends State<Register> {
                           Align(
                             alignment: Alignment.center,
                             child: Text('إنشاء الحساب',
-                                style: Theme.of(context).textTheme.titleLarge?.copyWith(color: MyColors.blue)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(color: MyColors.blue)),
                           ),
                           buildTextField(
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return 'Please enter yout phone number!';
+                                  return 'ادخل اسمك!';
                                 }
                                 return null;
                               },
@@ -163,7 +166,7 @@ class _RegisterState extends State<Register> {
                               // context: context,
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return 'Please enter yout phone number!';
+                                  return 'ادخل البريد الالكتروني!';
                                 }
                                 return null;
                               },
@@ -175,7 +178,7 @@ class _RegisterState extends State<Register> {
                               // context: context,
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return 'Please enter yout phone number!';
+                                  return 'ادخل كلمة المرور!';
                                 }
                                 return null;
                               },
@@ -187,7 +190,10 @@ class _RegisterState extends State<Register> {
                           Align(
                               alignment: Alignment.centerRight,
                               child: Text('رقم الجوال ',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey[800]))),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(color: Colors.grey[800]))),
                           _buildPhoneFormField(),
                           const SizedBox(
                             height: 30,
@@ -195,7 +201,8 @@ class _RegisterState extends State<Register> {
                           Align(
                               alignment: Alignment.center,
                               child: SizedBox(
-                                  width: MediaQuery.of(context).size.width / 1.9,
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.9,
                                   height: 50,
                                   child: Container(
                                     width: double.infinity,
@@ -216,8 +223,10 @@ class _RegisterState extends State<Register> {
                                       },
                                       child: const Text(
                                         'تسجيل',
-                                        style:
-                                            TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ),
                                   ))),

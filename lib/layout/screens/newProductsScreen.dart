@@ -1,62 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:anamil/constants/MyColors.dart';
-import 'package:anamil/constants/images.dart';
+import 'package:anamil/dataDemo.dart';
 import 'package:anamil/layout/widgets/appbarSearchWidget.dart';
-import 'package:anamil/layout/widgets/productBox.dart';
 import 'package:anamil/layout/widgets/safeAreaWidget.dart';
 import 'package:flutter/material.dart';
-
-var products = [
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-];
 
 class NewProductsScreen extends StatelessWidget {
   const NewProductsScreen({super.key});
@@ -68,7 +16,7 @@ class NewProductsScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             'الأعمال الحديثة',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
           ),
           leading: IconButton(
             onPressed: () {
@@ -101,7 +49,7 @@ class NewProductsScreen extends StatelessWidget {
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
       ),
-      children: products,
+      children: DataDemo.products,
     );
   }
 }

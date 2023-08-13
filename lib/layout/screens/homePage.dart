@@ -3,6 +3,7 @@
 import 'package:anamil/layout/screens/forYouScreen.dart';
 import 'package:anamil/layout/screens/newProductsScreen.dart';
 import 'package:anamil/layout/widgets/carouselWithIndicator.dart';
+import 'package:anamil/models/product.dart';
 import 'package:flutter/material.dart';
 import '../../layout/widgets/appbarSearchWidget.dart';
 import '../../layout/widgets/categoryWidget.dart';
@@ -30,12 +31,11 @@ class HomePage extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               child: Row(
                 children: [
-                  CategoryWidget(),
-                  CategoryWidget(),
-                  CategoryWidget(),
-                  CategoryWidget(),
-                  CategoryWidget(),
-                  CategoryWidget(),
+                  CategoryWidget(name: 'كروشية', image: Images.imgDemo2),
+                  CategoryWidget(name: 'لوحات', image: Images.imgDemo9),
+                  CategoryWidget(name: 'خزف', image: Images.imgDemo13),
+                  CategoryWidget(name: 'منسوجات', image: Images.imgDemo12),
+                  CategoryWidget(name: 'لوحات مائية', image: Images.imgDemo10),
                 ],
               ),
             ),
@@ -64,16 +64,18 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductBox(
-                        product: 'لوحة تشكيلية',
-                        desc: 'باستخدام الألوان الزيتية مع لوح...',
-                        image: Images.imageDemo1,
-                        price: 218,
+                        product: Product(
+                          images: [Images.imgDemo9],
+                          details: [],
+                          category: '',
+                        ),
                       ),
                       ProductBox(
-                        product: 'لوحة تشكيلية',
-                        desc: 'باستخدام الألوان الزيتية مع لوح...',
-                        image: Images.imageDemo1,
-                        price: 218,
+                        product: Product(
+                          images: [Images.imgDemo8],
+                          details: [],
+                          category: '',
+                        ),
                       ),
                     ],
                   ),
@@ -104,16 +106,18 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductBox(
-                        product: 'لوحة تشكيلية',
-                        desc: 'باستخدام الألوان الزيتية مع لوح...',
-                        image: Images.imageDemo1,
-                        price: 218,
+                        product: Product(
+                          images: [Images.imgDemo3],
+                          details: [],
+                          category: '',
+                        ),
                       ),
                       ProductBox(
-                        product: 'لوحة تشكيلية',
-                        desc: 'باستخدام الألوان الزيتية مع لوح...',
-                        image: Images.imageDemo1,
-                        price: 218,
+                        product: Product(
+                          images: [Images.imgDemo4],
+                          details: [],
+                          category: '',
+                        ),
                       ),
                     ],
                   ),

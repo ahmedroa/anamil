@@ -1,60 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:anamil/constants/MyColors.dart';
-import 'package:anamil/constants/images.dart';
-import 'package:anamil/layout/widgets/productBox.dart';
+import 'package:anamil/dataDemo.dart';
 import 'package:flutter/material.dart';
 
-var products = [
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-  ProductBox(
-    product: 'لوحة تشكيلية',
-    desc: 'باستخدام الألوان الزيتية مع لوح...',
-    image: Images.imageDemo1,
-    price: 218,
-  ),
-];
 String dropdownValue = 'المفضلة';
 
 class Favorite extends StatefulWidget {
@@ -100,7 +49,9 @@ class _FavoriteState extends State<Favorite> {
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
       ),
-      children: products,
+      children: DataDemo.products
+          .where((element) => element.product.isFavorite == true)
+          .toList(),
     );
   }
 
